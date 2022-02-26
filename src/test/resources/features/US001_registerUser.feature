@@ -23,6 +23,6 @@ Feature: Register_User_Functionality
     When kullanici Continue butonuna tiklar
     Then kullanicin otutum actigini dogreulamasi gerekir(Logged in as username)
     Then kullanici Delete Account butonuna tiklar
-    Then kullanici hesabin silindigini test eder
+    Then kullanici hesabin silindigini test eder 
 
 
