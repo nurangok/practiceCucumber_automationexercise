@@ -46,7 +46,7 @@ public class FillDetailsStepDefs {
     }
     @Then("kullanici hesabin olustugunu dogrular")
     public void kullanici_hesabin_olustugunu_dogrular() {
-        Assert.assertTrue(fillDetailsPage.accountCreatedText.isDisplayed());
+          Assert.assertTrue(fillDetailsPage.accountCreatedText.isDisplayed());
     }
 }
 
