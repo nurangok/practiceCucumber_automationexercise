@@ -12,7 +12,8 @@ import utilities.ExcelUtil;
 import java.util.List;
 import java.util.Map;
 
-public class LoginStepDefs { LoginPage loginPage = new LoginPage();
+public class LoginStepDefs { 
+    LoginPage loginPage=new LoginPage();
 
     //steps
 
@@ -44,12 +45,10 @@ public class LoginStepDefs { LoginPage loginPage = new LoginPage();
     public void kullanici_login_butonuna_tiklar() {
         loginPage.loginButton.click();
     }
-
     @Then("kullanici oturum actigini test eder\\(Logged in as username)")
     public void kullanici_oturum_actigini_test_eder_logged_in_as_username() {
         Assert.assertTrue(loginPage.loginYourAccountText.isDisplayed());
     }
-
     @Then("kullanici logout butonuna basar")
     public void kullanici_logout_butonuna_basar() {
         loginPage.logoutButton.click();
@@ -66,12 +65,15 @@ public class LoginStepDefs { LoginPage loginPage = new LoginPage();
     public void kullaniciDogruEmailVeSifreyiExcelIleGirer() {
         String path = "src/test/resources/testData/testData.xlsx";
         String sheetName = "Sayfa1";
-        ExcelUtil excelUtil = new ExcelUtil(path, sheetName);
+        ExcelUtil excelUtil =new ExcelUtil(path,sheetName);
 
         List<Map<String, String>> loginData = excelUtil.getDataList();
 
         loginPage.loginemailElement.sendKeys(loginData.get(0).get("Email"));
         loginPage.loginPasswordBox.sendKeys(loginData.get(0).get("Password"));
 
+
     }
+
+
 }
